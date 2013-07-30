@@ -2407,6 +2407,7 @@ body.mercury-transitions {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+  letter-spacing: inherit;
   color: inherit;
   resize: vertical; }
   .mercury-text-region textarea.mercury-text-region-textarea:focus {

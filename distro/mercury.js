@@ -5900,30 +5900,6 @@ Copyright (c) 2013 Jeremy Jackson
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  Mercury.Action.Image = (function(_super) {
-    __extends(Image, _super);
-
-    function Image() {
-      _ref = Image.__super__.constructor.apply(this, arguments);
-      return _ref;
-    }
-
-    Image.prototype.name = 'image';
-
-    Image.prototype.asHtml = function() {
-      return "<img src=\"" + (this.get('url')) + "\">";
-    };
-
-    return Image;
-
-  })(Mercury.Action);
-
-}).call(this);
-(function() {
-  var _ref,
-    __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
-
   Mercury.Action.Link = (function(_super) {
     __extends(Link, _super);
 
@@ -5994,7 +5970,6 @@ Copyright (c) 2013 Jeremy Jackson
 
     Media.prototype.asMarkdown = function() {
       if (!!this.get('width') || !!this.get('height') || this.get('type') !== 'image') {
-        console.log(this.get('width'));
         return this.asHtml();
       } else {
         return "![](" + (this.get('src')) + ")";
@@ -6002,7 +5977,6 @@ Copyright (c) 2013 Jeremy Jackson
     };
 
     Media.prototype.asHtml = function() {
-      debugger;      console.log("asHTML", this);
       if (this.get('type') === 'image') {
         return "<img src=\"" + (this.get('src')) + "\" align=\"" + (this.get('align')) + "\" width=\"" + (this.get('width')) + "\" height=\"" + (this.get('height')) + "\"></img>";
       } else {

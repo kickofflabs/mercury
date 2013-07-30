@@ -411,6 +411,7 @@ This file contains all of the required css for the Mercury interface as well as 
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+  letter-spacing: inherit;
   color: inherit;
   resize: vertical; }
   .mercury-text-region textarea.mercury-text-region-textarea:focus {
