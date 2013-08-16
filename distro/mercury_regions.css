@@ -411,8 +411,8 @@ This file contains all of the required css for the Mercury interface as well as 
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
-  letter-spacing: inherit;
   text-shadow: inherit;
+  text-align: inherit;
   letter-spacing: inherit;
   color: inherit;
   resize: vertical; }
