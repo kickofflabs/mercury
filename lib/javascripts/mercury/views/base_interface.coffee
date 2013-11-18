@@ -263,7 +263,10 @@ class Mercury.BaseInterface extends Mercury.View
     left -= left + width - viewport if left + width > viewport
     callback = ->
       @removeClass('mercury-no-animation') if animate
-      @css(top: pos.top - height, left: left, width: width)
+      if (pos.top - height) < 0
+        @css(top: pos.top + @region.$el.height(), left: left, width: width)
+      else
+        @css(top: pos.top - height, left: left, width: width)
     if animate
       @delay(20, callback)
       @delay(300, -> Mercury.trigger('interface:resize', @dimensions()))

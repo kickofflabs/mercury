@@ -36,7 +36,7 @@ Copyright (c) 2013 Jeremy Jackson
       prefixUrl: '/mercury/templates'
     },
     "interface": {
-      enabled: true,
+      enabled: false,
       "class": 'FrameInterface',
       toolbar: 'Toolbar',
       statusbar: 'Statusbar',
@@ -4239,11 +4239,19 @@ Copyright (c) 2013 Jeremy Jackson
         if (animate) {
           this.removeClass('mercury-no-animation');
         }
-        return this.css({
-          top: pos.top - height,
-          left: left,
-          width: width
-        });
+        if ((pos.top - height) < 0) {
+          return this.css({
+            top: pos.top + this.region.$el.height(),
+            left: left,
+            width: width
+          });
+        } else {
+          return this.css({
+            top: pos.top - height,
+            left: left,
+            width: width
+          });
+        }
       };
       if (animate) {
         this.delay(20, callback);
@@ -7281,7 +7289,7 @@ Copyright (c) 2013 Jeremy Jackson
       text: 'insert'
     },
     config: {
-      colors: 'FFFFFF FFCCCC FFCC99 FFFF99 FFFFCC 99FF99 99FFFF CCFFFF CCCCFF FFCCFF CCCCCC FF6666 FF9966 FFFF66 FFFF33 ' + '66FF99 33FFFF 66FFFF 9999FF FF99FF C0C0C0 FF0000 FF9900 FFCC66 FFFF00 33FF33 66CCCC 33CCFF 6666CC CC66CC ' + '999999 CC0000 FF6600 FFCC33 FFCC00 33CC00 00CCCC 3366FF 6633FF CC33CC 666666 990000 CC6600 CC9933 999900 ' + '009900 339999 3333FF 6600CC 993399 333333 660000 993300 996633 666600 006600 336666 000099 333399 663366 ' + '000000 330000 663300 663333 333300 003300 003333 000066 330099 330033'
+      colors: 'ffffff 000000 eeece1 1f497d 4f81bd c0504d 9bbb59 8064a2 4bacc6 f79646 ffff00 f2f2f2 7f7f7f ddd9c3 c6d9f0 ' + 'dbe5f1 f2dcdb ebf1dd e5e0ec dbeef3 fdeada fff2ca d8d8d8 595959 c4bd97 8db3e2 b8cce4 e5b9b7 d7e3bc ccc1d9 ' + 'b7dde8 fbd5b5 ffe694 bfbfbf 3f3f3f 938953 548dd4 95b3d7 d99694 c3d69b b2a2c7 b7dde8 fac08f f2c314 a5a5a5 ' + '262626 494429 17365d 366092 953734 76923c 5f497a 92cddc e36c09 c09100 7f7f7f 0c0c0c 1d1b10 0f243e 244061 ' + '632423 4f6128 3f3151 31859b 974806 7f6000'
     },
     registerButton: function() {
       return this.button.set({
@@ -7356,7 +7364,7 @@ Copyright (c) 2013 Jeremy Jackson
         _results.push("<li data-value='" + color + "' style='background:#" + color + "'></li>");
       }
       return _results;
-    })()).join('')) + "\n  <li class=\"last-picked\">Last Color Picked</li>\n</ul>";
+    })()).join('')) + "\n  <li class=\"last-picked\">Last Color Picked</li>\n  <li class=\"no-color\">None - Default Color</li>  \n</ul>";
   };
 
 }).call(this);
