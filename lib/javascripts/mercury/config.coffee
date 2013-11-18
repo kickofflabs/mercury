@@ -71,7 +71,7 @@ Mercury.configuration =
   # override default functionality and interface elements. Other properties can be configured here as well.
   #
   interface:
-    enabled    : true                                      # initial visible state - trigger 'interface:show' to show
+    enabled    : false                                      # initial visible state - trigger 'interface:show' to show
     class      : 'FrameInterface'                          # interface class - used on Mercury.init()
     toolbar    : 'Toolbar'                                 # toolbar class to use within the interface
     statusbar  : 'Statusbar'                               # statusbar class to use within the interface
