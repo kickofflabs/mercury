@@ -2411,7 +2411,8 @@ body.mercury-transitions {
   text-align: inherit;
   letter-spacing: inherit;
   color: inherit;
-  resize: vertical; }
+  resize: vertical;
+  vertical-align: inherit; }
   .mercury-text-region textarea.mercury-text-region-textarea:focus {
     outline-offset: 0;
     outline: none;
