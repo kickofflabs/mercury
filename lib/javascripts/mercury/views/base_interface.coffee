@@ -263,7 +263,8 @@ class Mercury.BaseInterface extends Mercury.View
     left -= left + width - viewport if left + width > viewport
     callback = ->
       @removeClass('mercury-no-animation') if animate
-      if (pos.top - height) < 0
+      # Make sure the floating toolbar is always visible. 
+      if (@region.$el.offset().top - height) < 0
         @css(top: pos.top + @region.$el.height(), left: left, width: width)
       else
         @css(top: pos.top - height, left: left, width: width)
