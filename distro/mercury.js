@@ -11,7 +11,7 @@ Copyright (c) 2013 Jeremy Jackson
 
   Mercury.configuration = {
     logging: {
-      enabled: false,
+      enabled: true,
       notifier: 'console'
     },
     localization: {
@@ -36,7 +36,7 @@ Copyright (c) 2013 Jeremy Jackson
       prefixUrl: '/mercury/templates'
     },
     "interface": {
-      enabled: false,
+      enabled: true,
       "class": 'FrameInterface',
       toolbar: 'Toolbar',
       statusbar: 'Statusbar',
@@ -45,9 +45,9 @@ Copyright (c) 2013 Jeremy Jackson
       shadowed: false,
       maskable: false,
       style: false,
-      floating: false,
+      floating: true,
       floatWidth: false,
-      floatDrag: true,
+      floatDrag: false,
       nohijack: ['mercury-ignored']
     },
     toolbars: {
@@ -4239,7 +4239,7 @@ Copyright (c) 2013 Jeremy Jackson
         if (animate) {
           this.removeClass('mercury-no-animation');
         }
-        if ((pos.top - height) < 0) {
+        if ((this.region.$el.offset().top - height) < 0) {
           return this.css({
             top: pos.top + this.region.$el.height(),
             left: left,
