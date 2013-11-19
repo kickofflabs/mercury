@@ -14,7 +14,7 @@ Mercury.configuration =
   # based on what notifier you choose to use. Use false if you don't care about fallbacks.
   #
   logging:
-    enabled    : false
+    enabled    : true
     notifier   : 'console'                                 # error, console, or alert
 
 
@@ -71,7 +71,7 @@ Mercury.configuration =
   # override default functionality and interface elements. Other properties can be configured here as well.
   #
   interface:
-    enabled    : false                                      # initial visible state - trigger 'interface:show' to show
+    enabled    : true                                      # initial visible state - trigger 'interface:show' to show
     class      : 'FrameInterface'                          # interface class - used on Mercury.init()
     toolbar    : 'Toolbar'                                 # toolbar class to use within the interface
     statusbar  : 'Statusbar'                               # statusbar class to use within the interface
@@ -80,9 +80,9 @@ Mercury.configuration =
     shadowed   : false                                     # puts the interface into a shadow dom when it's available
     maskable   : false                                     # uses a mask over the document for toolbar dialogs
     style      : false                                     # interface style - 'small', 'flat' or 'small flat'
-    floating   : false                                     # floats to the focused region
+    floating   : true                                     # floats to the focused region
     floatWidth : false                                     # fixed width for floating interface (pixel value - eg. 520)
-    floatDrag  : true                                      # allow dragging the floating interface manually
+    floatDrag  : false                                      # allow dragging the floating interface manually
     nohijack   : ['mercury-ignored']                       # classnames of anchors/forms that shouldn't be hijacked
 
 
